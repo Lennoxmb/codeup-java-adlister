@@ -6,7 +6,6 @@
 </head>
 <body>
 <jsp:include page="partials/navbar.jsp"/>
-response.sendRedirect("/login");
     <c:if test="true">
         <h1>Variable names should be very descriptive</h1>
     </c:if>
