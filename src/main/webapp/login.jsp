@@ -1,16 +1,13 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: lennoxballard
-  Date: 5/9/23
-  Time: 10:47 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<form class="row g-3">
+    <div class="col-auto">
+        <label for="emailAddress" class="visually-hidden">Email</label>
+        <input type="text" class="form-control" id="emailAddress" placeholder="Email">
+    </div>
+    <div class="col-auto">
+        <label for="inputPassword2" class="visually-hidden">Password</label>
+        <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+    </div>
+</form>
