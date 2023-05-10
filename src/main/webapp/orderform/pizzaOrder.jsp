@@ -21,7 +21,18 @@
 <jsp:include page="/partials/navbar.jsp"/>
 <div class="container">
   <h1> Create a pizza</h1>
-  <form action="order" method="post">
+  <form action="pizzaOrder" method="post">
+      <fieldset>
+          <legend>Size:</legend>
+          <label for="small">Small:</label>
+          <input type="radio" name="size" value="small" id="small">
+          <br>
+          <label for="medium">Medium:</label>
+          <input type="radio" name="size" value="medium" id="medium">
+          <br>
+          <label for="large">Large:</label>
+          <input type="radio" name="size" value="large" id="large">
+      </fieldset>
     <fieldset>
       <legend>Crust:</legend>
       <label for="thick">Thick:</label>
@@ -32,19 +43,17 @@
     <br>
         <label for="deep dish">Deep Dish:</label>
         <input type="radio" name="crust" value="deep dish" id="deep dish">
-
     </fieldset>
-    <fieldset>
-        <legend>Size:</legend>
-        <label for="small">Small:</label>
-        <input type="radio" name="size" value="small" id="small">
-        <br>
-        <label for="medium">Medium:</label>
-        <input type="radio" name="size" value="medium" id="medium">
-        <br>
-        <label for="large">Large:</label>
-        <input type="radio" name="size" value="large" id="large">
-    </fieldset>
+      <fieldset>
+          <legend>Sauce:</legend>
+            <label for="tomato">Tomato:</label>
+            <input type="radio" name="sauce" value="tomato" id="tomato">
+            <br>
+            <label for="alfredo">Alfredo:</label>
+            <input type="radio" name="sauce" value="alfredo" id="alfredo">
+            <label for="buffalo">buffalo:</label>
+            <input type="radio" name="sauce" value="buffalo" id="buffalo">
+      </fieldset>
     <fieldset>
       <legend>Toppings:</legend>
 <label for="pepperoni">Pepperoni:</label>
@@ -67,8 +76,9 @@
   </form>
     <c:if test="${order != null}">
         <h2>your order:</h2>
-        <p>${order.crust}</p>
         <p>${order.size}</p>
+        <p>${order.crust}</p>
+        <p>${order.sauce}</p>
         <p>Toppings: </p>
         <ul>
             <c:forEach items="${order.toppings}" var="topic">
