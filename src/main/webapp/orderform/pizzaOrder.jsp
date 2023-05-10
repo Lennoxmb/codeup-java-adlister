@@ -10,6 +10,7 @@
 <html>
 <head>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <jsp:include page="/partials/head.jsp"/>
 </head>
 <body>
 <jsp:include page="/partials/navbar.jsp"/>
@@ -43,17 +44,17 @@
       </fieldset>
       <fieldset>
             <legend>Toppings:</legend>
+          <input type="checkbox" name="toppings" value="pepperoni" id="pepperoni">
             <label for="pepperoni">Pepperoni:</label>
-            <input type="checkbox" name="toppings[]" value="pepperoni" id="pepperoni">
             <br>
+          <input type="checkbox" name="toppings" value="sausage" id="sausage">
             <label for="sausage">Sausage:</label>
-            <input type="checkbox" name="toppings[]" value="sausage" id="sausage">
             <br>
+          <input type="checkbox" name="toppings" value="bacon" id="bacon">
             <label for="bacon">Bacon:</label>
-            <input type="checkbox" name="toppings[]" value="bacon" id="bacon">
             <br>
+          <input type="checkbox" name="toppings" value="mushrooms" id="mushrooms">
             <label for="mushrooms">Mushrooms:</label>
-            <input type="checkbox" name="toppings[]" value="mushrooms" id="mushrooms">
       </fieldset>
         <fieldset>
       <legend>Address: </legend>

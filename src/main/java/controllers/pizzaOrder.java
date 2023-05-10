@@ -23,11 +23,17 @@ public class pizzaOrder extends HttpServlet{
             String sauce = req.getParameter("sauce");
             String[] toppings = req.getParameterValues("toppings");
             String address = req.getParameter("address");
+            System.out.println(size);
+            System.out.println(crust);
+            System.out.println(sauce);
+            System.out.println("toppings:");
+            for(String topping : toppings) {
+                System.out.println(topping);
+            }
+            System.out.println(address);
+
             order submittedOrder = new order(size, crust, sauce, toppings, address);
-//            String fontSizeRequested = req.getParameter("font-size");
-//            System.out.println(fontSizeRequested);
             req.setAttribute("order", submittedOrder);
-//            req.setAttribute("font", fontSizeRequested);
             req.getRequestDispatcher("orderform/pizzaOrder.jsp").forward(req, resp);
         }
 
