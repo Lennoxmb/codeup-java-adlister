@@ -21,10 +21,10 @@
 <jsp:include page="/partials/navbar.jsp"/>
 <div class="container">
   <h1> Create a pizza</h1>
-  <form action="createPost" method="post">
+  <form action="order" method="post">
     <fieldset>
-      <legend>Topic:</legend>
-      <label for="thick">Crust:</label>
+      <legend>Crust:</legend>
+      <label for="thick">Thick:</label>
       <input type="radio" name="crust" value="thick" id="thick">
       <br>
         <label for="thin">Thin:</label>
@@ -64,23 +64,18 @@
       <label for="address">Address:</label>
         <input type="text" name="address" id="address">
     </fieldset>
-    <%--      <label for="ai">AI:</label>--%>
-    <%--      <input type="checkbox" name="topic" value="ai" id="ai">--%>
-    <%--      <label for="machine learning">Machine Learning:</label>--%>
-    <%--      <input type="checkbox" name="topic" value="machine learning" id="machine learning">--%>
-<%--    <input type="submit" value="Submit">--%>
-<%--    <label for="fontsize">Font Size:</label>--%>
-<%--    <input type="number" name="fontsize" id="fontsize">--%>
   </form>
-  <c:if test="${order != null}">
-  <h2>your pizza order:</h2>
-<%--  <h3 id="title">${order}.title}</h3>--%>
-<%--  <p>${order.post}</p>--%>
-  <p>Crust: </p>
-  <ul>
-    <c:forEach items="${post.crust}" var="crust">
-    <li>${crust}</li>
-    </c:forEach>
+    <c:if test="${order != null}">
+        <h2>your order:</h2>
+        <p>${order.crust}</p>
+        <p>${order.size}</p>
+        <p>Toppings: </p>
+        <ul>
+            <c:forEach items="${order.toppings}" var="topic">
+                <li>${toppings}</li>
+            </c:forEach>
+        </ul>
+        <p>${order.address}</p>
     </c:if>
 </div>
 </body>
