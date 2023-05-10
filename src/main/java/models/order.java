@@ -1,25 +1,22 @@
 package models;
 
 public class order {
-      private String size;
-        private String crust;
-        private String sauce;
-        private String toppings;
-        private String address;
-
+    private String size;
+    private String crust;
+    private String sauce;
+    private String[] toppings;
+    private String address;
 
     public order() {
 
     }
-    public order(String size, String crust, String sauce, String toppings, String address) {
+
+    public order(String size, String crust, String sauce, String[] toppings, String address) {
         this.size = size;
         this.crust = crust;
         this.sauce = sauce;
         this.toppings = toppings;
         this.address = address;
-    }
-
-    public order(String size, String crust, String sauce, String[] toppings, String address) {
     }
 
     public String getSize() {
@@ -46,11 +43,11 @@ public class order {
         this.sauce = sauce;
     }
 
-    public String getToppings() {
+    public String[] getToppings() {
         return toppings;
     }
 
-    public void setToppings(String toppings) {
+    public void setToppings(String[] toppings) {
         this.toppings = toppings;
     }
 

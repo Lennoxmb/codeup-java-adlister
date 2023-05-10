@@ -8,6 +8,9 @@
             <li><a href="/pizza-order">pizza</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+            <li><a href="/pickcolor">colors</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
             <li><a href="/login">Login</a></li>
         </ul>
     </div><!-- /.navbar-collapse -->
