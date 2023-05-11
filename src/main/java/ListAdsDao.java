@@ -39,4 +39,10 @@ public class ListAdsDao implements Ads {
         ));
         return ads;
     }
+
+  //Use the all method on the ListAdsDao class to get a listing of all the ads
+
+
+
+
 }
