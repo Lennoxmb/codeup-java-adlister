@@ -10,10 +10,16 @@
 
 <html>
 <head>
-    <title>Results</title>
+    <jsp:include page="/partials/head.jsp">
+        <title>Outcome</title>
+        <jsp:param name="title" value="outcome" />
+    </jsp:include>
 </head>
 <body>
+<jsp:include page="/partials/navbar.jsp" />
+
 <h1>${outcome}</h1>
+
 </body>
 </html>
 

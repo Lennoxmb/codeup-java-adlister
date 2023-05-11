@@ -9,10 +9,13 @@ import java.io.IOException;
 
 @WebServlet("/incorrect")
 public class incorrect extends HttpServlet {
-
-        @Override
-        protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-            req.setAttribute("outcome", "You Lost!");
-            req.getRequestDispatcher("/orderform/outcome.jsp").forward(req, resp);
-        }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        request.setAttribute("outcome", "You Lose :(");
+        request.getRequestDispatcher("outcome.jsp").forward(request, response);
     }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+
+    }
+
+}
