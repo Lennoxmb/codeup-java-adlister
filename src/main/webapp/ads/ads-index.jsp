@@ -5,18 +5,35 @@
   Time: 1:50 PM
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<!DOCTYPE html>
 <html>
 <head>
-    <jsp:include page="/partials/head.jsp">
-        <jsp:param name="title" value="/ads.jsp"/>
-    </jsp:include>
+    <title>All Ads</title>
 </head>
 <body>
-<%--In your JSP file, loop through all the ads and display each one.--%>
-<c:forEach var="ad" items="${ads}">
-</c:forEach>
-
+<h1>All Ads</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Image URL</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach var="ad" items="${Ads}">
+        <tr>
+            <td>${ad.title}</td>
+            <td>${ad.description}</td>
+            <td>${ad.imageUrl}</td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
 </body>
 </html>
+

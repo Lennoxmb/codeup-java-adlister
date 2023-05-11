@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListAdsDao implements Ads {
+public class ListAdsDao {
     private List<Ad> ads;
 
     public List<Ad> all() {
@@ -10,6 +10,8 @@ public class ListAdsDao implements Ads {
         }
         return ads;
     }
+
+
 
     private List<Ad> generateAds() {
         List<Ad> ads = new ArrayList<>();
@@ -40,7 +42,7 @@ public class ListAdsDao implements Ads {
         return ads;
     }
 
-  //Use the all method on the ListAdsDao class to get a listing of all the ads
+
 
 
 
