@@ -16,24 +16,12 @@
 </head>
 <body>
 <h1>All Ads</h1>
-<table>
-    <thead>
-    <tr>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Image URL</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="ad" items="${Ad}">
-        <tr>
-            <td>${ad.title}</td>
-            <td>${ad.description}</td>
-            <td>${ad.imageUrl}</td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
+<c:forEach var="ad" items="${ads}">
+    <div class="ad">
+    <h3>${ad.title}</h3>
+    <p>${ad.description}</p>
+    </div>
+</c:forEach>
 </body>
 </html>
 

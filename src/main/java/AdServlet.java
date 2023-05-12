@@ -6,14 +6,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-
-
-@WebServlet(name = "ViewProfileServlet", urlPatterns = "/ads")
+@WebServlet("/ads")
 public class AdServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Ad> ads;
-        request.getRequestDispatcher("/ads-index.jsp").forward(request, response);
 
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        Ads adsDao = DaoFactory.getAdsDao();
+//        List<Ad> ads = adsDao.all();
+        List<Ad> ads = DaoFactory.getAdsDao().all();
+
+        req.setAttribute("ads", ads);
+        req.getRequestDispatcher("/ads/index.jsp").forward(req, resp);
     }
 }

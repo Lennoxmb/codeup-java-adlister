@@ -3,7 +3,7 @@ public class DaoFactory {
 
     public static Ads getAdsDao() {
         if (adsDao == null) {
-            adsDao = (Ads) new ListAdsDao();
+            adsDao = new ListAdsDao();
         }
         return adsDao;
     }
