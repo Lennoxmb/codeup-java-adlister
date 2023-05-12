@@ -8,6 +8,7 @@ import java.io.IOException;
 @WebServlet(name = "ViewProfileServlet", urlPatterns = "/profile")
 public class ViewProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //if they're not logged in, they should be redirected to the login page.
         if (request.getSession().getAttribute("username") == null) {
             response.sendRedirect("/login");
             return;

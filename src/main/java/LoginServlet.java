@@ -8,6 +8,11 @@ import java.io.IOException;
 @WebServlet(name = "LoginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //the profile page is displayed if they're already logged in and try to go to login
+                if (request.getSession().getAttribute("username") != null) {
+            response.sendRedirect("/profile");
+            return;
+        }
         request.getRequestDispatcher("/login.jsp").forward(request, response);
     }
 
@@ -15,10 +20,7 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         boolean validAttempt = username.equals("admin") && password.equals("password");
-//        if (request.getSession().getAttribute("username") != null) {
-//            response.sendRedirect("/profile");
-//            return;
-//        }
+
         if (validAttempt) {
             request.getSession().setAttribute("username", username);
             response.sendRedirect("/profile");
