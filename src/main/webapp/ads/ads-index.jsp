@@ -25,7 +25,7 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="ad" items="${Ads}">
+    <c:forEach var="ad" items="${Ad}">
         <tr>
             <td>${ad.title}</td>
             <td>${ad.description}</td>

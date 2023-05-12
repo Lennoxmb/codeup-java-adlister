@@ -13,7 +13,7 @@ public class AdServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Ad> ads;
-        request.getRequestDispatcher("/ads.jsp").forward(request, response);
+        request.getRequestDispatcher("/ads-index.jsp").forward(request, response);
 
     }
 }
