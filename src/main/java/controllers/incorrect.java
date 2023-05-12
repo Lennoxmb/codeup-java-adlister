@@ -11,7 +11,7 @@ import java.io.IOException;
 public class incorrect extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         request.setAttribute("outcome", "You Lose :(");
-        request.getRequestDispatcher("outcome.jsp").forward(request, response);
+        request.getRequestDispatcher("orderform/outcome.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

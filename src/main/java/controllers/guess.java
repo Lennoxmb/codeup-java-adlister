@@ -13,7 +13,7 @@ import java.util.Random;
 @WebServlet("/guess")
 public class guess extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        request.getRequestDispatcher("/guess.jsp").forward(request, response);
+        request.getRequestDispatcher("orderform/guess.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -23,9 +23,9 @@ public class guess extends HttpServlet {
         int guess = Integer.parseInt(request.getParameter("guess"));
 
         String destination;
-        if(guess > 3 || guess < 1) destination = "/guess";
-        else if(guess == randomNumber) destination = "/correct";
-        else destination = "/incorrect";
+        if(guess > 3 || guess < 1) destination = "orderform/guess";
+        else if(guess == randomNumber) destination = "orderform/correct";
+        else destination = "orderform/incorrect";
 
         response.sendRedirect(destination);
 
