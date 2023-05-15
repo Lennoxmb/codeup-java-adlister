@@ -6,33 +6,34 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class JDBCTest {
-
-    private static List<String> getAlbumNames(){
-        List<String> albumNames = new ArrayList<>();
+    private static List<String> getAuthorNames() {
+        List<String> authorNames = new ArrayList<>();
         try {
+            // Establish connection
             DriverManager.registerDriver(new Driver());
-            Connection connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/codeup_test_db?allowPublicKeyRetrieval=true&useSSL=false",
-                    "root",
-                    "codeup"
-            );
-            //create statement
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/codeup_test_db?allowPublicKeyRetrieval=true&useSSL=false",
+                    "codeup_test_user",
+                    "codeup");
+
+            // Create statement object
             Statement statement = connection.createStatement();
-            // execute statement
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM codeup_test_db.albums");
-            while (resultSet.next()) {
-                albumNames.add(resultSet.getString("name"));
+            // Execute statement
+            ResultSet rs = statement.executeQuery("SELECT author_name FROM codeup_test_db.authors");
+            while (rs.next()){
+                authorNames.add(rs.getString("author_name"));
             }
-        } catch (SQLException sqlx) {
-            sqlx.printStackTrace();
+
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
         }
-        return albumNames;
+        return authorNames;
     }
 
     public static void main(String[] args) {
-        for (String name : getAlbumNames()) {
+        List<String> authors = getAuthorNames();
+        for(String name : authors){
             System.out.println(name);
         }
     }
-
+}
 }
