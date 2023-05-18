@@ -2,6 +2,7 @@ package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
+import config.Config;
 
 import java.sql.*;
 
@@ -12,8 +13,8 @@ public class MySQLUsersDao implements Users {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
-                config.getUrl(),
-                config.getUser(),
+                Config.getUrl(),
+                Config.getUser(),
                 config.getPassword()
             );
         } catch (SQLException e) {
